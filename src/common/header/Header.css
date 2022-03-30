@@ -1,0 +1,51 @@
+#app-bar-style{
+    background-color: #222;
+    height: px;
+    padding: 8px 32px 8px 16px;
+}
+
+.brand-icon-style{
+    background-color: #ff7f7f;
+    height: 35px;
+    animation: rotation 8s linear infinite;
+    float: left;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .book-show-btn-style{
+    position: absolute;
+    top: 8px;
+    left: 88%;
+  }
+
+  .login-logout-btn-style{
+    position: absolute;
+    top: 8px;
+    left: 89%;
+  }
+
+ .modal-tabPanel-style{
+  margin: auto;
+  width: 50%;
+  padding: 100px;
+ }
+
+ .container {
+    height: 70px;
+    position: relative;
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateX(150%);
+  }
