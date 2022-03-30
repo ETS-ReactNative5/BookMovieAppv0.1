@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../common/header/Header";
-//import Home from "../screens/home/Home";
+import Home from "./home/Home";
 //import Details from "../screens/details/Details";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import BookShow from "../screens/bookshow/BookShow";
@@ -12,6 +12,7 @@ const Controller = () => {
   return (
     <React.Fragment>
     <Header></Header>
+    <Home></Home>
     {/* <Router>
       <div className="main-container">
         <Route
