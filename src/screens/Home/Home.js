@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import UpcomingMoviesGrid from './UpcomingMoviesGrid';
-import ReleasedMoviesGrid from './ReleasedMoviesGrid';
+import MainDashboardHome from './MainDashboardHome';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,7 +17,7 @@ export default function Home(){
                 </Toolbar>
             </AppBar>
             <UpcomingMoviesGrid/>
-            <ReleasedMoviesGrid/>
+            <MainDashboardHome/>
         </React.Fragment>
     );
 }
