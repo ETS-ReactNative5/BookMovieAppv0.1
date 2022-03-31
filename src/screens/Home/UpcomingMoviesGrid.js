@@ -8,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import './UpcomingMoviesGrid.css';
 
-
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -30,7 +29,7 @@ const styles = theme => ({
   },
 });
 
-function SingleLineGridList(props) {
+function UpcomingMoviesGrid(props) {
   const { classes } = props;
 
   const [posterData, setPosterData] = useState([
@@ -91,9 +90,9 @@ function SingleLineGridList(props) {
   );
 }
 
-SingleLineGridList.propTypes = {
+UpcomingMoviesGrid.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
 
-export default withStyles(styles)(SingleLineGridList);
+export default withStyles(styles)(UpcomingMoviesGrid);
