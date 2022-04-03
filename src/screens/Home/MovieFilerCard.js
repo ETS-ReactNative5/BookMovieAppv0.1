@@ -88,7 +88,7 @@ const MenuProps = {
   },
 };
 
-function SimpleCard(props) {
+function MovieFilterCard(props) {
   const { classes } = props;
 
   const [GenreName, setGenreName] = React.useState([]);
@@ -114,14 +114,14 @@ function SimpleCard(props) {
     );
   };
 
-  const [releaseStartData, setReleaseStartData] = React.useState(new Date("dd-mm-yyyy"));
-  const handleReleaseStartData = (newValue) => {
-    setReleaseStartData(newValue);
+  const [releaseStartData, setReleaseStartData] = React.useState();
+  const handleReleaseStartData = (e) => {
+    setReleaseStartData(e.target.value);
   };
 
-  const [releaseEndData, setReleaseEndData] = React.useState(new Date("dd-mm-yyyy"));
-  const handleReleaseEndData = (newValue) => {
-    setReleaseEndData(newValue);
+  const [releaseEndData, setReleaseEndData] = React.useState();
+  const handleReleaseEndData = (e) => {
+    setReleaseEndData(e.target.value);
   };
   
 
@@ -185,18 +185,21 @@ function SimpleCard(props) {
         <TextField  className={classes.cmpPosition}
           name=" Release Date Start"
           label=" Release Date Start"
+          onChange={(e) => setReleaseStartData(e.target.value)}
+          value={releaseStartData}
           InputLabelProps={{ shrink: true}}
           type="date"
-          defaultValue={releaseStartData}
+          
       />
 
         {/* Release End Date */}
         <TextField  className={classes.cmpPosition}
           name="Release Date End"
           label="Release Date End "
+          onChange={(e) => setReleaseEndData(e.target.value)}
+          value={releaseEndData}
           InputLabelProps={{ shrink: true}}
           type="date"
-          defaultValue={releaseEndData}
       />
       <br/>
 
@@ -207,8 +210,8 @@ function SimpleCard(props) {
   );
 }
 
-SimpleCard.propTypes = {
+MovieFilterCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleCard);
+export default withStyles(styles)(MovieFilterCard);
