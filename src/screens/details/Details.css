@@ -1,0 +1,31 @@
+#wrapper{
+    display:flex;
+    width:100%;
+  }
+#w20{
+    width:20%;
+    padding: 3%;
+}
+#w60{
+    width:60%;
+    padding: 3%;
+}
+#back-to-home-btn{
+    background-color: white;
+    margin: 8px 0px 0px 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#poster-style {
+    width: 300px;
+    height: 400px;
+}
+
+#artist-style {
+    width: 150px;
+    height: 150px;   
+}
+
+
+ 

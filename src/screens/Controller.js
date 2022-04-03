@@ -1,18 +1,19 @@
 import React from "react";
 import Header from "../common/header/Header";
 import Home from "./home/Home";
-//import Details from "../screens/details/Details";
+import Details from "../screens/details/Details";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import BookShow from "../screens/bookshow/BookShow";
 import Confirmation from "../screens/confirmation/Confirmation";
+
 
 const Controller = () => {
   const baseUrl = "/api/v1/";
 
   return (
     <React.Fragment>
-    <Header></Header>
-    <Home></Home>
+    {/* <Home></Home> */}
+    <Details></Details>
     {/* <Router>
       <div className="main-container">
         <Route
