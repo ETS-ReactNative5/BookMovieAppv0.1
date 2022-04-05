@@ -7,6 +7,8 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import './UpcomingMoviesGrid.css';
+import { Link } from "react-router-dom";
+
 
 const styles = theme => ({
   root: {
@@ -74,8 +76,9 @@ function UpcomingMoviesGrid(props) {
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={6} cellHeight={250}>
         {posterData.map(tile => (
+          <Link  to="/movie">
           <GridListTile key={tile.id}>
-            <img src={tile.poster_url} alt={tile.title} />
+            <img src={tile.poster_url} alt={tile.title} id='fit-image-upcoming' />
             <GridListTileBar
               title={tile.title}
               classes={{
@@ -84,6 +87,7 @@ function UpcomingMoviesGrid(props) {
               }}
             />
           </GridListTile>
+          </Link>
         ))}
       </GridList>
     </div>

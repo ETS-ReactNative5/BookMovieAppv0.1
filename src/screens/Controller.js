@@ -13,8 +13,8 @@ const Controller = () => {
   return (
     <React.Fragment>
     {/* <Home></Home> */}
-    <Details></Details>
-    {/* <Router>
+    {/* <Details></Details> */}
+    <Router>
       <div className="main-container">
         <Route
           exact
@@ -22,7 +22,7 @@ const Controller = () => {
           render={(props) => <Home {...props} baseUrl={baseUrl} />}
         />
         <Route
-          path="/movie/:id"
+          path="/movie"
           render={(props) => <Details {...props} baseUrl={baseUrl} />}
         />
         <Route
@@ -34,7 +34,7 @@ const Controller = () => {
           render={(props) => <Confirmation {...props} baseUrl={baseUrl} />}
         />
       </div>
-    </Router> */}
+    </Router>
     </React.Fragment>
   );
 };

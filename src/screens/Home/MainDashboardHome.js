@@ -8,6 +8,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import { Link } from "react-router-dom";
 
 
 const styles = theme => ({
@@ -40,7 +41,7 @@ export function MainDashboardHome(props) {
         {
           id: 1,
           title: 'X-MEN',
-          poster_url: 'https://webneel.net/file/images/11-16/8-xmen-movie-poster-design.jpg',
+          poster_url: 'https://www.joblo.com/wp-content/uploads/2010/05/2009-x_men_origins_wolverine-5-1.jpg',
           release_date: 'Fri Jul 12 2017'
       },
       {
@@ -58,19 +59,19 @@ export function MainDashboardHome(props) {
       {
           id: 4,
           title: 'AVATAR',
-          poster_url: 'https://wallpaperaccess.com/full/1076854.jpg',
+          poster_url: 'https://wallpapercave.com/wp/MFwIgvm.jpg',
           release_date: 'Wed Oct 15 2017'
       },
       {
           id: 5,
           title: 'DOWNTOWN ABBEY',
-          poster_url: 'https://preview.redd.it/atyf1poo8oe31.jpg?auto=webp&s=d28749798085f4b4947e99c167dc3b2ab1f04e30',
+          poster_url: 'https://wallpaperaccess.com/full/1341997.jpg',
           release_date: 'Sun Nov 01 2020'
       },
       {
           id: 6,
           title: 'HIGHWAY',
-          poster_url: 'http://qrius.com/wp-content/uploads/2014/03/Highway-Movie-Poster.jpg',
+          poster_url: 'https://mimansashekhar.files.wordpress.com/2014/02/highway-poster.jpg',
           release_date: 'Tue Aug 11 2017'
       }
     ])
@@ -86,8 +87,10 @@ export function MainDashboardHome(props) {
                 <ListSubheader component="div">Released Movies List:</ListSubheader>
                 </GridListTile>
                 {posterData.map(tile => (
-                <GridListTile key={tile.id}>
-                    <img src={tile.poster_url} alt={tile.title} />
+                <GridListTile key={tile.id}> 
+                    <Link to="/movie">
+                      <img src={tile.poster_url} alt={tile.title} id='fit-image' />
+                    </Link>
                     <GridListTileBar
                     title={tile.title}
                     subtitle={<span>Release Date: {tile.release_date}</span>}
