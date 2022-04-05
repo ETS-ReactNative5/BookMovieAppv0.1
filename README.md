@@ -1,3 +1,9 @@
+Project UI Preview:
+<img width="960" alt="preview_1" src="https://user-images.githubusercontent.com/45137809/161829888-6c314dac-10c5-47b1-9af6-dd1894bd60b1.PNG">
+<img width="960" alt="preview_2" src="https://user-images.githubusercontent.com/45137809/161829913-464d2d36-85a1-4c28-9bcb-878fb209820c.PNG">
+<img width="960" alt="preview_3" src="https://user-images.githubusercontent.com/45137809/161829932-f83f6ba3-10a8-40ae-90f0-69b006608699.PNG">
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
