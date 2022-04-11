@@ -12,8 +12,6 @@ const Controller = () => {
 
   return (
     <React.Fragment>
-    {/* <Home></Home> */}
-    {/* <Details></Details> */}
     <Router>
       <div className="main-container">
         <Route

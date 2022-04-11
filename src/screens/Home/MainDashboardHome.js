@@ -76,14 +76,15 @@ export function MainDashboardHome(props) {
       }
     ])
 
+    const [filterCriteria, setFilterCriteria] = useState([]);
+
  return(
     <div id="wrapper">
-
         {/*  Released Movies */}
         <div id="w70">  
             <div className={classes.root}>
             <GridList cellHeight={350} className={classes.gridList} cols={3}  style={{ width: '100%' }} spacing={25}>
-                <GridListTile key="posterData.id" cols={4} style={{ height: 'auto' }} spac>
+                <GridListTile key="posterData.id" cols={4} style={{ height: 'auto' }}>
                 <ListSubheader component="div">Released Movies List:</ListSubheader>
                 </GridListTile>
                 {posterData.map(tile => (
@@ -103,7 +104,7 @@ export function MainDashboardHome(props) {
         
         {/*  Movie Filter Card */}
         <div id="w30">  
-            <MovieFilerCard />
+            <MovieFilerCard filterLogic={setFilterCriteria} />
         </div>
   </div>
  );

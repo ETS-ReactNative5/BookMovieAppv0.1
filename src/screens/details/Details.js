@@ -11,6 +11,8 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import { Link } from "react-router-dom";
+
 
 const opts = {
     height: '390',
@@ -114,7 +116,9 @@ function Details(props){
             
             {/* Back to Home Button */}
             <Toolbar position="static">
-                <Typography variant="h6" id='back-to-home-btn'> &lt; Back to Home</Typography>
+              <Link  to="/">
+                  <Typography variant="h6" id='back-to-home-btn'> &lt; Back to Home</Typography>
+              </Link>
             </Toolbar>
             
             <div id="wrapper">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -55,26 +55,12 @@ const genreList = [
 ];
 
 const artistList = [
-  {
-    id: 0,
-    first_name: 'Sajid',
-    last_name: 'Sayed',
-  },
-  {
-    id: 1,
-    first_name: 'Kareena',
-    last_name: 'Nazia',
-  },
-  {
-    id: 2,
-    first_name: 'Haseena',
-    last_name: 'Banu',
-  },
-  {
-    id: 3,
-    first_name: 'Azgar',
-    last_name: 'Ali',
-  },
+  'Dwanyne Johnson',
+  'Emma Clark',
+  'Rebecca',
+  'Cayettana',
+  'Samuel',
+  'Gilert'
 ];
 
 const ITEM_HEIGHT = 48;
@@ -91,7 +77,12 @@ const MenuProps = {
 function MovieFilterCard(props) {
   const { classes } = props;
 
-  const [GenreName, setGenreName] = React.useState([]);
+  const [movieName, setMovieName] = React.useState('');
+  const handleMovieNameChange = (event) => {
+    setMovieName(event.target.value);
+  }
+
+  const [genreName, setGenreName] = React.useState([]);
   const handleGenreChange = (event) => {
     const {
       target: { value },
@@ -103,7 +94,7 @@ function MovieFilterCard(props) {
   };
 
 
-  const [ArtistName, setArtistName] = React.useState([]);
+  const [artistName, setArtistName] = React.useState([]);
   const handleArtistChange = (event) => {
     const {
       target: { value },
@@ -114,16 +105,28 @@ function MovieFilterCard(props) {
     );
   };
 
-  const [releaseStartData, setReleaseStartData] = React.useState();
+  const [releaseStartData, setReleaseStartData] = React.useState('');
   const handleReleaseStartData = (e) => {
     setReleaseStartData(e.target.value);
   };
 
-  const [releaseEndData, setReleaseEndData] = React.useState();
+  const [releaseEndData, setReleaseEndData] = React.useState('');
   const handleReleaseEndData = (e) => {
     setReleaseEndData(e.target.value);
   };
   
+  function onApplyHandler(){
+    props.filterLogic(
+        {
+        movieName,
+        genreName,
+        artistName,
+        releaseStartData,
+        releaseEndData
+        }
+      );
+  }
+
 
   return (
     <Card className={classes.card}>
@@ -135,7 +138,7 @@ function MovieFilterCard(props) {
         {/* Movie Name Input */}
         <FormControl className={classes.cmpPosition}>
           <InputLabel htmlFor="my-input">Movie Name</InputLabel>
-          <Input id="my-input" aria-describedby="my-helper-text" />
+          <Input id="my-input" aria-describedby="my-helper-text" onChange={handleMovieNameChange} />
         </FormControl>
         <br/>
 
@@ -145,14 +148,14 @@ function MovieFilterCard(props) {
           <Select
             id="demo-multiple-checkbox"
             multiple
-            value={GenreName}
+            value={genreName}
             onChange={handleGenreChange}
             renderValue={(selected) => selected.join(', ')}
             MenuProps={MenuProps}
           >
             {genreList.map((genre) => (
               <MenuItem key={genre} value={genre}>
-                <Checkbox checked={GenreName.indexOf(genre) > -1} />
+                <Checkbox checked={genreName.indexOf(genre) > -1} />
                 <ListItemText primary={genre} />
               </MenuItem>
             ))}
@@ -166,15 +169,15 @@ function MovieFilterCard(props) {
           <Select
             id="demo-multiple-checkbox-2"
             multiple
-            value={ArtistName}
+            value={artistName}
             onChange={handleArtistChange}
             renderValue={(selected) => selected.join(', ')}
             MenuProps={MenuProps}
           >
             {artistList.map((artist) => (
-              <MenuItem key={artist.id} value={`${artist.first_name} ${artist.last_name}`}>
-                <Checkbox checked={ArtistName.indexOf(artist) > -1} />
-                <ListItemText primary={`${artist.first_name} ${artist.last_name}`} />
+              <MenuItem key={artist.id} value={artist}>
+                <Checkbox checked={artistName.indexOf(artist) > -1} />
+                <ListItemText primary={artist} />
               </MenuItem>
             ))}
           </Select>
@@ -204,7 +207,7 @@ function MovieFilterCard(props) {
       <br/>
 
       {/* Apply Filter Button */}
-      <Button  className={classes.cmpPosition} variant="contained" color="primary">APPLY</Button>
+      <Button  className={classes.cmpPosition} variant="contained" color="primary" onClick={onApplyHandler}>APPLY</Button>
       </CardContent>
     </Card>
   );
