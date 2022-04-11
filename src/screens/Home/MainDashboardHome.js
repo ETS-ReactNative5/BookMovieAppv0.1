@@ -80,6 +80,13 @@ export function MainDashboardHome(props) {
 
  return(
     <div id="wrapper">
+      {/* Test FilterCriteria state */}
+      {/* <p>{filterCriteria.movieName}</p>
+      <p>{filterCriteria.genreName}</p>
+      <p>{filterCriteria.artistName}</p>
+      <p>{filterCriteria.releaseStartData}</p>
+      <p>{filterCriteria.releaseEndData}</p> */}
+
         {/*  Released Movies */}
         <div id="w70">  
             <div className={classes.root}>
